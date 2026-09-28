@@ -61,13 +61,13 @@
 
 /* Premium Buttons - Fixed to Logo Maroon */
 .btn-primary-custom {
-  background-color: #711b3c;
+  background-color: #17385A;
   color: white;
   padding: 12px 30px;
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  border: 2px solid #711b3c;
+  border: 2px solid #17385A;
   transition: all 0.3s ease;
   opacity: 0;
   display: inline-block;
@@ -75,7 +75,7 @@
 
 .btn-primary-custom:hover {
   background-color: transparent;
-  color: #711b3c;
+  color: #17385A;
   box-shadow: 0 5px 15px rgba(113, 27, 60, 0.3);
 }
 
@@ -153,7 +153,7 @@
   padding: 80px 0;
 }
 .section-title {
-  color: #222222;
+  color: #17385A !important;
   font-weight: 700;
   margin-bottom: 15px;
   position: relative;
@@ -164,7 +164,7 @@
   position: absolute;
   width: 50%;
   height: 3px;
-  background-color: #711b3c;
+  background-color: #17385A;
   bottom: -5px;
   left: 0;
 }
@@ -191,7 +191,7 @@
   position: absolute;
   bottom: -20px;
   right: 20px;
-  background: #711b3c;
+  background: #17385A;
   color: white;
   padding: 20px;
   border-radius: 10px;
@@ -241,11 +241,11 @@
   transition: color 0.3s;
 }
 .service-link:hover {
-  color: #711b3c;
+  color: #17385a;
 }
 .btn-quote-outline {
-  color: #711b3c;
-  border: 1px solid #711b3c;
+  color: #17385a;
+  border: 1px solid #00A8B8;
   border-radius: 20px;
   padding: 5px 15px;
   font-size: 0.9rem;
@@ -253,7 +253,7 @@
   text-decoration: none;
 }
 .btn-quote-outline:hover {
-  background-color: #711b3c;
+  background-color: #00A8B8;
   color: white;
 }
 
@@ -272,8 +272,8 @@
 .feature-icon {
   width: 70px;
   height: 70px;
-  background-color: rgba(113, 27, 60, 0.1);
-  color: #711b3c;
+ background-color: rgba(0, 168, 184, 0.1);
+  color: #00A8B8; /* 10% Teal Color */
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -283,7 +283,7 @@
   transition: all 0.3s ease;
 }
 .feature-box:hover .feature-icon {
-  background-color: #711b3c;
+  background-color: #00A8B8;
   color: #ffffff;
 }
 .feature-title {
@@ -327,7 +327,7 @@
   position: absolute;
   top: 15px;
   left: 15px;
-  background-color: #711b3c;
+  background-color: #00A8B8;
   color: white;
   padding: 4px 12px;
   font-size: 0.75rem;
@@ -349,11 +349,11 @@
   transition: color 0.3s;
 }
 .view-details-link:hover {
-  color: #711b3c;
+  color: #00A8B8;
 }
 .btn-call {
-  border: 2px solid #711b3c;
-  color: #711b3c;
+  border: 2px solid #17385a;
+  color: #17385a;
   background: transparent;
   display: inline-flex;
   align-items: center;
@@ -364,20 +364,20 @@
   transition: all 0.3s ease;
 }
 .btn-call:hover {
-  background-color: #711b3c;
+  background-color: #17385a;
   color: white;
 }
 .btn-quote-full {
-  background-color: #222222;
+  background-color: #17385a;
   color: white;
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.3s ease;
-  border: 2px solid #222222;
+  border: 2px solid #17385a;
 }
 .btn-quote-full:hover {
   background-color: transparent;
-  color: #222222;
+  color: #00A8B8;
 }
 
 /* Brands Section Styling */
@@ -410,7 +410,7 @@
   transform: scale(1.1);
 }
 .blog-card:hover .blog-title a {
-  color: #711b3c !important;
+  color: #17385a !important;
 }
 .blog-card:hover .btn-read-more i {
   transform: translateX(5px);
@@ -532,7 +532,7 @@
 }
 .custom-input:focus {
   background-color: #ffffff;
-  border-color: #711b3c;
+  border-color: #17385a;
   box-shadow: 0 0 0 0.25rem rgba(113, 27, 60, 0.1);
   outline: none;
 }
@@ -552,8 +552,8 @@
 
 .premium-input:focus {
   background-color: #ffffff;
-  border-color: #711b3c;
-  box-shadow: 0 0 0 4px rgba(113, 27, 60, 0.1);
+  border-color: #17385a;
+  box-shadow: 0 0 0 4px rgba(23, 56, 90, 0.1);
   outline: none;
 }
 
@@ -565,13 +565,13 @@
 
 .premium-input:focus ~ label,
 .premium-input:not(:placeholder-shown) ~ label {
-  color: #711b3c;
+  color: #17385a;
   font-weight: 600;
 }
 
 /* Maroon Glow Button */
 .btn-maroon-glow {
-  background: linear-gradient(135deg, #711b3c 0%, #90234d 100%);
+  background: linear-gradient(135deg, #17385a 0%, #90234d 100%);
   color: #ffffff;
   border: none;
   border-radius: 10px;

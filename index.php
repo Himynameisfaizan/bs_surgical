@@ -105,8 +105,8 @@ include("includes/header.php");
                 <div class="slide-bg" style="background-image: url('assets/images/banner1.jpg');"></div>
                 <div class="carousel-caption">
                     <div class="container">
-                        <h2 class="hero-title">Premium Indian Spices <br><span style="color: #711b3c;">& Dry Fruits</span></h2>
-                        <p>Bhagirath Enterprise exports the finest quality agricultural products worldwide with unmatched purity.</p>
+                        <h2 class="hero-title">Precision Medical Equipment <br><span style="color: #00A8B8;">& Surgical Instruments</span></h2>
+                        <p>BS Surgical provides top-tier ENT operating microscopes and surgical tools with unmatched precision and reliability.</p>
                         <div>
                             <a href="products.php" class="btn-primary-custom">Explore Products</a>
                             <a href="contact.php" class="btn-outline-custom">Contact an Expert</a>
@@ -134,33 +134,28 @@ include("includes/header.php");
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <div class="about-img-wrapper">
                     <?php 
-                    // Database se image path fetch karna (agar khali ho toh default image dikhegi)
-                    $aboutImg = !empty($about_data['image_url']) ? 'admin/' . $about_data['image_url'] : 'assets/images/about.jpg';
+                    $aboutImg = !empty($about_data['image_url']) ? 'admin/' . $about_data['image_url'] : 'assets/images/images.png';
                     ?>
-                    <img src="<?= htmlspecialchars($aboutImg); ?>" alt="<?= !empty($about_data['title']) ? htmlspecialchars($about_data['title']) : 'Bhagirath Enterprise Premium Quality'; ?>" onerror="this.src='https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800&auto=format&fit=crop'">
+                    <img src="<?= htmlspecialchars($aboutImg); ?>" alt="<?= !empty($about_data['title']) ? htmlspecialchars($about_data['title']) : 'BS Surgical Premium Quality'; ?>" onerror="this.src='https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800&auto=format&fit=crop'">
                     <div class="about-experience">
                         <h3 class="mb-0">100%</h3>
-                        <p class="mb-0 small">Authentic Quality</p>
+                        <p class="mb-0 small">Precision & Safety</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 ps-lg-5">
-                <span class="text-uppercase" style="color: #711b3c; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Who We Are</span>
+                <span class="text-uppercase" style="color: #17385A; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Who We Are</span>
                 
-                <!-- Dynamic Title from database -->
                 <h1 class="section-title mb-4 h2">
-                    <?= !empty($about_data['title']) ? htmlspecialchars($about_data['title']) : 'Exporting the Finest Flavors & Agricultural Wealth of India'; ?>
+                    <?= !empty($about_data['title']) ? htmlspecialchars($about_data['title']) : 'Delivering Precision and Safety with Advanced Surgical Equipment'; ?>
                 </h1>
                 
-                <!-- Dynamic Description/Content from database -->
                 <div class="text-muted-custom mb-4">
                     <?php 
                     if (!empty($about_data['content'])) {
-                        // Agar admin ne rich text / HTML tags ke sath content save kiya hai toh usko render karega
                         echo $about_data['content']; 
                     } else {
-                        // Fallback text agar table khali ho
-                        echo '<p>At <strong>Bhagirath Enterprise</strong>, we specialize in processing and exporting premium quality whole spices, dry fruits, and authentic Indian agricultural products.</p>';
+                        echo '<p>At <strong>BS Surgical</strong>, we specialize in providing high-quality ENT operating microscopes, surgical burs, and advanced medical equipment for healthcare professionals. Our commitment is to ensure better care through technology.</p>';
                     }
                     ?>
                 </div>
@@ -172,12 +167,12 @@ include("includes/header.php");
 </section>
 
 <!-- Dynamic Categories Section -->
-<section class="section-padding bg-light-grey">
+<!-- <section class="section-padding bg-light-grey">
     <div class="container">
         <div class="text-center mb-5 d-flex flex-column">
-            <span class="text-uppercase" style="color: #711b3c; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Shop By Category</span>
+            <span class="text-uppercase" style="color: #17385A; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Shop By Category</span>
             <h2 class="section-title mx-auto">Our Premium Categories</h2>
-            <p class="text-muted-custom mt-3 max-w-700 mx-auto" style="max-width: 600px;">Explore our diverse range of high-quality, farm-fresh agricultural categories, carefully sourced to meet global standards.</p>
+            <p class="text-muted-custom mt-3 max-w-700 mx-auto" style="max-width: 600px;">Explore our diverse range of high-quality medical equipment and surgical instruments, carefully sourced to meet global healthcare standards.</p>
         </div>
 
         <div class="row g-4">
@@ -209,14 +204,14 @@ include("includes/header.php");
             <?php endif; ?>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Why Choose Us Section -->
 <section class="section-padding">
     <div class="container">
         <div class="text-center mb-5 d-flex flex-column">
-            <span class="text-uppercase" style="color: #711b3c; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Why Bhagirath Enterprise</span>
-            <h2 class="section-title mx-auto">The Trusted Choice for Global Exports</h2>
+            <span class="text-uppercase" style="color: #17385A; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Why BS Surgical</span>
+            <h2 class="section-title mx-auto">The Trusted Choice for Medical Equipment</h2>
         </div>
 
         <div class="row g-4">
@@ -224,28 +219,28 @@ include("includes/header.php");
                 <div class="feature-box">
                     <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
                     <h5 class="feature-title">Certified Quality</h5>
-                    <p class="text-muted-custom small mb-0">Our products meet rigorous global food safety standards ensuring 100% purity and authenticity.</p>
+                    <p class="text-muted-custom small mb-0">Our products meet rigorous medical safety standards ensuring 100% precision and reliability.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="feature-box">
                     <div class="feature-icon"><i class="bi bi-globe"></i></div>
-                    <h5 class="feature-title">Global Export</h5>
-                    <p class="text-muted-custom small mb-0">Seamless international logistics and timely delivery to our clients across the globe.</p>
+                    <h5 class="feature-title">Nationwide Supply</h5>
+                    <p class="text-muted-custom small mb-0">Seamless logistics and timely delivery to hospitals and clinics across the country.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="feature-box">
-                    <div class="feature-icon"><i class="bi bi-basket"></i></div>
-                    <h5 class="feature-title">Farm Fresh Sourcing</h5>
-                    <p class="text-muted-custom small mb-0">Ethically sourced directly from the finest Indian farms to preserve natural aroma and taste.</p>
+                    <div class="feature-icon"><i class="bi bi-cpu"></i></div>
+                    <h5 class="feature-title">Advanced Technology</h5>
+                    <p class="text-muted-custom small mb-0">Equipped with the latest advancements in medical technology, including Labomed microscopes.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="feature-box">
                     <div class="feature-icon"><i class="bi bi-graph-up-arrow"></i></div>
                     <h5 class="feature-title">Competitive Pricing</h5>
-                    <p class="text-muted-custom small mb-0">Premium quality agricultural and food exports offered at the best international market rates.</p>
+                    <p class="text-muted-custom small mb-0">Premium quality surgical instruments offered at the best competitive market rates.</p>
                 </div>
             </div>
         </div>
@@ -257,8 +252,8 @@ include("includes/header.php");
     <div class="container">
         <div class="d-flex justify-content-between align-items-end mb-5">
             <div>
-                <span class="text-uppercase d-flex flex-column" style="color: #711b3c; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Our Produce</span>
-                <h2 class="section-title mb-0">Premium Export Products</h2>
+                <span class="text-uppercase d-flex flex-column" style="color: #17385A; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Our Equipment</span>
+                <h2 class="section-title mb-0">Premium Medical Products</h2>
             </div>
             <div class="d-none d-md-block">
                 <a href="products.php" class="btn btn-outline-dark" style="border-radius: 20px; font-weight: 600;">View All Products</a>
@@ -270,13 +265,11 @@ include("includes/header.php");
             if ($products_res && mysqli_num_rows($products_res) > 0):
                 while ($prod = mysqli_fetch_assoc($products_res)):
                     $proImg = !empty($prod['pro_img']) ? 'admin/assets/img/uploads/' . $prod['pro_img'] : 'assets/images/black.png';
-                    
-                    // Slug check: Agar slug_url database mein khali hai toh fallback ke liye id use karega
                     $productSlug = !empty($prod['slug_url']) ? $prod['slug_url'] : $prod['id'];
             ?>
                     <div class="col-lg-3 col-md-6">
                         <div class="product-card h-100 shadow-sm border rounded overflow-hidden">
-                            <span class="product-badge">Export Grade</span>
+                            <span class="product-badge" style="background-color: #00A8B8;">Medical Grade</span>
                             <div class="product-img-wrapper" style="height: 200px; overflow: hidden;">
                                 <a href="product-details.php?slug=<?php echo urlencode($productSlug); ?>">
                                 <img src="<?= htmlspecialchars($proImg) ?>" alt="<?= htmlspecialchars($prod['pro_name']) ?>" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='assets/images/black.png'">
@@ -292,7 +285,7 @@ include("includes/header.php");
                                     <a href="product-details.php?slug=<?php echo urlencode($productSlug); ?>" class="view-details-link">View Details <i class="bi bi-chevron-right" style="font-size: 0.8rem;"></i></a>
                                 </div>
                                 <div class="d-flex gap-2">
-                                    <a href="tel:+918448211202" class="btn-call" title="Call for inquiry">
+                                    <a href="tel:+918595803224" class="btn-call" title="Call for inquiry">
                                         <i class="bi bi-telephone-fill"></i>
                                     </a>
                                     <a href="contact.php?product=<?= urlencode($prod['pro_name']) ?>" class="btn btn-quote-full flex-grow-1 text-center py-2 text-decoration-none">Inquire Now</a>
@@ -318,19 +311,19 @@ include("includes/header.php");
 <section class="section-padding" style="background-color: #fdfdfd; border-top: 1px solid #f0f0f0;">
     <div class="container">
         <div class="text-center mb-5 d-flex flex-column">
-            <span class="text-uppercase" style="color: #711b3c; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Client Feedback</span>
-            <h2 class="section-title mx-auto">What Our Trusted Partners Say</h2>
+            <span class="text-uppercase" style="color: #17385A; font-size: 14px; font-weight: 600; letter-spacing: 1px;">Client Feedback</span>
+            <h2 class="section-title mx-auto">What Doctors & Hospitals Say</h2>
         </div>
         
         <div class="row g-4 justify-content-center">
             <?php 
             if ($test_res && mysqli_num_rows($test_res) > 0): 
                 while($test = mysqli_fetch_assoc($test_res)):
-                    $testImg = !empty($test['image']) ? 'admin/uploads/testimonials/' . $test['image'] : 'assets/images/clove.png';
+                    $testImg = !empty($test['image']) ? 'admin/uploads/testimonials/' . $test['image'] : 'assets/images/images.png';
             ?>
             <div class="col-lg-4 col-md-6">
                 <div class="testimonial-card p-4 bg-white shadow-sm rounded-4 h-100 position-relative transition-up">
-                    <i class="bi bi-quote position-absolute" style="font-size: 5rem; color: rgba(113, 27, 60, 0.05); top: -10px; right: 20px; z-index: 0;"></i>
+                    <i class="bi bi-quote position-absolute" style="font-size: 5rem; color: rgba(23, 56, 90, 0.05); top: -10px; right: 20px; z-index: 0;"></i>
                     
                     <div class="position-relative z-1">
                         <div class="d-flex align-items-center mb-4">
@@ -339,7 +332,7 @@ include("includes/header.php");
                             </div>
                             <div>
                                 <h4 class="mb-0" style="color: #222222; font-weight: 700; font-size: 1.1rem;"><?= htmlspecialchars($test['name']) ?></h4>
-                                <span class="text-muted small fw-semibold" style="color: #711b3c !important;"><?= htmlspecialchars($test['designation']) ?></span>
+                                <span class="text-muted small fw-semibold" style="color: #00A8B8 !important;"><?= htmlspecialchars($test['designation']) ?></span>
                             </div>
                         </div>
                         <div class="stars mb-2" style="color: #FFD700; font-size: 0.9rem;">
@@ -364,7 +357,7 @@ include("includes/header.php");
 <!-- Dynamic Brands Slider Section -->
 <section class="brands-slider-section py-5" style="background-color: #f8f9fa; border-top: 1px solid #eaeaea;">
     <div class="container">
-        <h2 class="text-center mb-5" style="color: #222222; font-weight: 700; font-size: 1.5rem; letter-spacing: 1px;">OUR TRUSTED CLIENTS & PARTNERS</h2>
+        <h2 class="text-center mb-5" style="color: #222222; font-weight: 700; font-size: 1.5rem; letter-spacing: 1px;">OUR TRUSTED HOSPITALS & PARTNERS</h2>
         
         <div class="brand-slider-container">
             <div class="brand-slide-track">
@@ -386,9 +379,9 @@ include("includes/header.php");
                     endfor; 
                     ?>
                 <?php else: ?>
-                    <div class="brand-slide"><h4 class="brand-logo">FSSAI</h4></div>
-                    <div class="brand-slide"><h4 class="brand-logo">APEDA</h4></div>
-                    <div class="brand-slide"><h4 class="brand-logo">SPICES BOARD</h4></div>
+                    <div class="brand-slide"><h4 class="brand-logo">ISO Certified</h4></div>
+                    <div class="brand-slide"><h4 class="brand-logo">CE Mark</h4></div>
+                    <div class="brand-slide"><h4 class="brand-logo">FDA Approved</h4></div>
                 <?php endif; ?>
             </div>
         </div>
@@ -404,8 +397,8 @@ include("includes/header.php");
 
             <div class="col-lg-8 reveal">
                 <div class="text-center mb-5">
-                    <span class="sec-subtitle text-uppercase fw-bold" style="color: #E3000F; letter-spacing: 1px; font-size: 14px;">Clear Your Doubts</span>
-                    <h2 class="sec-title" style="color: #17385A; font-weight: 700;">Frequently Asked Questions</h2>
+                    <span class="sec-subtitle text-uppercase fw-bold" style="color: #00A8B8; letter-spacing: 1px; font-size: 14px;">Clear Your Doubts</span>
+                    <h2 class="sec-title" style="color: #17385A !important; font-weight: 700;">Frequently Asked Questions</h2>
                 </div>
 
                 <!-- Bootstrap 5 Accordion -->
@@ -415,12 +408,12 @@ include("includes/header.php");
                     <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
                         <h3 class="accordion-header" id="faqHeading1">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1" style="font-weight: 600; color: #17385A; background-color: #f8f9fa;">
-                                Are your agricultural products certified for global export?
+                                Are your surgical products certified?
                             </button>
                         </h3>
                         <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#exportFaqAccordion">
                             <div class="accordion-body text-muted small">
-                                Yes, absolutely. Bhagirath Enterprise strictly complies with global food safety standards. Our exports are backed by necessary quality checks and certifications to clear customs smoothly in your destination country.
+                                Yes, absolutely. BS Surgical strictly complies with medical safety standards and global certifications ensuring top-tier reliability for all medical facilities.
                             </div>
                         </div>
                     </div>
@@ -429,12 +422,12 @@ include("includes/header.php");
                     <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
                         <h3 class="accordion-header" id="faqHeading2">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2" style="font-weight: 600; color: #17385A; background-color: #f8f9fa;">
-                                Do you handle B2B bulk orders and container shipments?
+                                Do you provide Labomed operating microscopes?
                             </button>
                         </h3>
                         <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#exportFaqAccordion">
                             <div class="accordion-body text-muted small">
-                                Yes, our core expertise lies in B2B wholesale and bulk container shipments (FCL/LCL). We supply high volumes of dry fruits, whole spices, and other commodities tailored to your commercial needs.
+                                Yes, we provide a wide range of Labomed microscopes including ENT, Prima MU, and Stella Spine Neuro and Cranial Operating Microscopes for precision surgeries.
                             </div>
                         </div>
                     </div>
@@ -443,12 +436,12 @@ include("includes/header.php");
                     <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
                         <h3 class="accordion-header" id="faqHeading3">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3" style="font-weight: 600; color: #17385A; background-color: #f8f9fa;">
-                                What is your Minimum Order Quantity (MOQ)?
+                                What types of surgical burs do you offer?
                             </button>
                         </h3>
                         <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#exportFaqAccordion">
                             <div class="accordion-body text-muted small">
-                                The Minimum Order Quantity (MOQ) varies depending on the specific product and the shipping method. Please reach out to our sales team at bhagirathenterprise7@gmail.com for exact product-wise MOQs.
+                                We offer a complete variety of burs including ENT Burs, Diamond Sintered Ball Burs, and Round Cutting Burs required for various specialized procedures.
                             </div>
                         </div>
                     </div>
@@ -457,12 +450,12 @@ include("includes/header.php");
                     <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
                         <h3 class="accordion-header" id="faqHeading4">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4" style="font-weight: 600; color: #17385A; background-color: #f8f9fa;">
-                                Do you offer customized or private label packaging?
+                                Do you provide after-sales service and warranty?
                             </button>
                         </h3>
                         <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#exportFaqAccordion">
                             <div class="accordion-body text-muted small">
-                                Yes, we offer customized packaging solutions, including bulk PP bags, jute bags, vacuum packs, and private labeling for retail brands. Let us know your packaging requirements during the inquiry process.
+                                Yes, all our major equipment comes with standard manufacturer warranties. We also provide dedicated after-sales support to ensure your equipment runs smoothly. Please reach out to bssurgicals@gmail.com for details.
                             </div>
                         </div>
                     </div>

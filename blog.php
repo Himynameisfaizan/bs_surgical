@@ -1,7 +1,7 @@
 <?php
 include ('config/connect.php'); 
 
-$pageTitle = "Blogs"; 
+$pageTitle = "Medical Insights | BS Surgical Blogs"; 
 include 'includes/header.php';
 include 'includes/breadcrumb.php';
 
@@ -48,24 +48,24 @@ if ($schema_query && mysqli_num_rows($schema_query) > 0) {
                 while($blog = mysqli_fetch_assoc($gridQuery)): 
                     $date = date('M d, Y', strtotime($blog['created_at']));
                     $excerpt = mb_substr(strip_tags($blog['description']), 0, 100) . '...';
-                    $img = !empty($blog['image']) ? 'admin/assets/img/uploads/blogs/' . $blog['image'] : 'https://images.unsplash.com/photo-1615486171448-4228965f7c32?q=80&w=800';
+                    $img = !empty($blog['image']) ? 'admin/assets/img/uploads/blogs/' . $blog['image'] : 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800'; // Medical image fallback
             ?>
             <div class="col-lg-4 col-md-6 reveal">
                 <div class="blog-card">
                     <div class="blog-img-wrapper">
-                        <span class="featured-category" style="top: 15px; left: 15px; font-size: 10px; padding: 4px 12px;">News</span>
+                        <span class="featured-category" style="top: 15px; left: 15px; font-size: 10px; padding: 4px 12px; background: #00A8B8;">News</span>
                         <a href="blog-details.php?slug=<?php echo $blog['slug']; ?>">
                             <img src="<?php echo $img; ?>" alt="<?php echo $blog['title']; ?>">
                         </a>
                     </div>
                     <div class="blog-content">
                         <div class="featured-meta" style="font-size: 13px;">
-                            <i class="fa-regular fa-calendar-days"></i> <?php echo $date; ?>
-                            <i class="fa-regular fa-user"></i> <?php echo $blog['author']; ?>
+                            <i class="fa-regular fa-calendar-days" style="color: #17385A;"></i> <?php echo $date; ?>
+                            <i class="fa-regular fa-user" style="color: #17385A;"></i> <?php echo $blog['author']; ?>
                         </div>
-                        <a href="blog-details.php?slug=<?php echo $blog['slug']; ?>" class="blog-title"><?php echo $blog['title']; ?></a>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;"><?php echo $excerpt; ?></p>
-                        <a href="blog-details.php?slug=<?php echo $blog['slug']; ?>" class="read-more-btn">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+                        <a href="blog-details.php?slug=<?php echo $blog['slug']; ?>" class="blog-title" style="color: #1a1a1a;"><?php echo $blog['title']; ?></a>
+                        <p style="color: #666666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;"><?php echo $excerpt; ?></p>
+                        <a href="blog-details.php?slug=<?php echo $blog['slug']; ?>" class="read-more-btn" style="color: #17385A;">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@ if ($schema_query && mysqli_num_rows($schema_query) > 0) {
             else:
                 // Show this if no other blogs exist
                 if(!$featuredBlog) {
-                    echo "<div class='col-12 text-center py-5'><h3 style='color: var(--text-muted);'>No Articles Found</h3></div>";
+                    echo "<div class='col-12 text-center py-5'><h3 style='color: #666666;'>No Articles Found</h3></div>";
                 }
             endif;
             ?>

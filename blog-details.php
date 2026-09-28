@@ -18,8 +18,9 @@ if (!$blog) {
 // 1. Content ke liye variables
 $publishDate = date('F d, Y', strtotime($blog['created_at']));
 $authorName = !empty($blog['author']) ? $blog['author'] : 'Admin Team';
-$mainImage = !empty($blog['image']) ? 'admin/assets/img/uploads/blogs/' . $blog['image'] : 'https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?q=80&w=1200';
+$mainImage = !empty($blog['image']) ? 'admin/assets/img/uploads/blogs/' . $blog['image'] : 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200'; // Medical fallback
 $currentURL = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$site = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 // 2. SEO (Header) ke liye variables
 $pageTitle = !empty($blog['meta_title']) ? $blog['meta_title'] : $blog['title'];
@@ -40,7 +41,7 @@ $auto_blog_schema = '
     },
     "publisher": {
         "@type": "Organization",
-        "name": "Bhagirath Enterprise",
+        "name": "BS Surgical",
         "logo": {
             "@type": "ImageObject",
             "url": "' . $site . 'assets/images/logo/logo.png"
@@ -54,7 +55,7 @@ $auto_blog_schema = '
 // 4. Admin Panel wala Custom Schema fetch karna
 $admin_custom_schema = $blog['schema_markup'];
 
-// Dono schemas ko jod kar $page_schema variable mein dalna (taaki header.php isko catch kar le)
+// Dono schemas ko jod kar $page_schema variable mein dalna
 $page_schema = $auto_blog_schema . "\n" . $admin_custom_schema;
 
 
@@ -64,8 +65,6 @@ include 'includes/header.php';
 include 'includes/breadcrumb.php';
 // ==========================================
 ?>
-
-<!-- Yahan se bina DOCTYPE, html ya head tag ke seedha content shuru hoga -->
 
 <section class="single-blog-section">
     <div class="container">
@@ -78,9 +77,9 @@ include 'includes/breadcrumb.php';
                     <img src="<?php echo $mainImage; ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>">
 
                     <div class="blog-meta-top">
-                        <span><i class="fa-regular fa-calendar-days"></i> <?php echo $publishDate; ?></span>
-                        <span><i class="fa-regular fa-user"></i> By <?php echo htmlspecialchars($authorName); ?></span>
-                        <span><i class="fa-regular fa-folder-open"></i> News & Insights</span>
+                        <span><i class="fa-regular fa-calendar-days" style="color: #17385A;"></i> <?php echo $publishDate; ?></span>
+                        <span><i class="fa-regular fa-user" style="color: #17385A;"></i> By <?php echo htmlspecialchars($authorName); ?></span>
+                        <span><i class="fa-regular fa-folder-open" style="color: #17385A;"></i> Medical Insights</span>
                     </div>
 
                     <h1><?php echo htmlspecialchars($blog['title']); ?></h1>
@@ -107,10 +106,10 @@ include 'includes/breadcrumb.php';
 
                     <!-- Search Widget -->
                     <div class="sidebar-widget">
-                        <h4 class="sidebar-title">Search</h4>
+                        <h4 class="sidebar-title" style="color: #1a1a1a;">Search</h4>
                         <form class="sidebar-search" action="blog.php" method="GET">
                             <input type="text" name="search" placeholder="Search insights...">
-                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button type="submit" style="background: #17385A;"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
 
@@ -118,11 +117,11 @@ include 'includes/breadcrumb.php';
                     <div class="sidebar-widget">
                         <h4 class="sidebar-title">Categories</h4>
                         <ul class="sidebar-cats">
-                            <li><a href="blog.php">Export Trends <span>(12)</span></a></li>
-                            <li><a href="blog.php">Farming Practices <span>(08)</span></a></li>
-                            <li><a href="blog.php">Health Benefits <span>(15)</span></a></li>
+                            <li><a href="blog.php">Surgical Trends <span>(12)</span></a></li>
+                            <li><a href="blog.php">Medical Equipment <span>(08)</span></a></li>
+                            <li><a href="blog.php">Healthcare News <span>(15)</span></a></li>
                             <li><a href="blog.php">Quality & Testing <span>(05)</span></a></li>
-                            <li><a href="blog.php">Company News <span>(03)</span></a></li>
+                            <li><a href="blog.php">Company Updates <span>(03)</span></a></li>
                         </ul>
                     </div>
 
@@ -137,7 +136,7 @@ include 'includes/breadcrumb.php';
                         if (mysqli_num_rows($recentQuery) > 0) {
                             while ($recentBlog = mysqli_fetch_assoc($recentQuery)):
                                 $r_date = date('M d, Y', strtotime($recentBlog['created_at']));
-                                $r_img = !empty($recentBlog['image']) ? 'admin/assets/img/uploads/blogs/' . $recentBlog['image'] : 'https://images.unsplash.com/photo-1615486171448-4228965f7c32?q=80&w=200';
+                                $r_img = !empty($recentBlog['image']) ? 'admin/assets/img/uploads/blogs/' . $recentBlog['image'] : 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=200';
                         ?>
                                 <div class="recent-post-item">
                                     <img src="<?php echo $r_img; ?>" alt="<?php echo htmlspecialchars($recentBlog['title']); ?>">
@@ -155,11 +154,11 @@ include 'includes/breadcrumb.php';
                     </div>
 
                     <!-- CTA Widget -->
-                    <div class="sidebar-widget text-center" style="background: var(--primary-green); color: white;">
-                        <i class="fa-solid fa-box-open" style="font-size: 40px; color: var(--accent-orange); margin-bottom: 15px;"></i>
-                        <h4 style="font-weight: 800; margin-bottom: 15px;">Looking for Bulk Spices?</h4>
-                        <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 20px;">Get a free quotation for your international export requirements today.</p>
-                        <a href="contact.php" class="btn-theme" style="background: var(--accent-orange); color: white; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 700; display: inline-block;">Request Quote</a>
+                    <div class="sidebar-widget text-center" style="background: #17385A; color: white;">
+                        <i class="fa-solid fa-microscope" style="font-size: 40px; color: #00A8B8; margin-bottom: 15px;"></i>
+                        <h4 style="font-weight: 800; margin-bottom: 15px;">Need Medical Equipment?</h4>
+                        <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 20px;">Get a free quotation for your hospital or clinic requirements today.</p>
+                        <a href="contact.php" class="btn-theme" style="background: #00A8B8; color: white; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 700; display: inline-block;">Request Quote</a>
                     </div>
 
                 </div>

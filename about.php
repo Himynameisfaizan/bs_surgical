@@ -29,27 +29,26 @@ if (isset($conn)) {
 ?>
 
 <?php include 'includes/header.php'; ?>
-
 <?php include 'includes/breadcrumb.php'; ?>
-    
-<!-- 1. ABOUT COMPANY SECTION (SEO H1 Tag applied here) -->
+  
+<!-- 1. ABOUT COMPANY SECTION -->
 <section class="inner-about section-padding">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 reveal mb-4 mb-lg-0">
                 <div class="about-image-collage position-relative">
-                    <img src="https://images.unsplash.com/photo-1716816211590-c15a328a5ff0?w=500&auto=format&fit=crop&q=60" alt="Bhagirath Enterprise Export Facility" class="about-img-1 w-100 rounded shadow-lg" style="object-fit: cover; height: 350px;">
-                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=600&auto=format&fit=crop" alt="Premium Indian Spices and Dry Fruits" class="about-img-2 position-absolute border border-white border-5 rounded shadow" style="width: 250px; bottom: -30px; right: -20px;">
+                    <img src="assets/images/about-main.jpg" alt="BS Surgical Equipment" class="about-img-1 w-100 rounded shadow-lg" style="object-fit: cover; height: 350px;" onerror="this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop'">
+                    <img src="assets/images/about-sub.jpg" alt="Labomed Operating Microscope" class="about-img-2 position-absolute border border-white border-5 rounded shadow" style="width: 250px; bottom: -30px; right: -20px;" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600&auto=format&fit=crop'">
                 </div>
             </div>
             <div class="col-lg-6 ps-lg-5 reveal mt-5 mt-lg-0">
-                <span class="sec-subtitle text-uppercase fw-bold" style="color: #E3000F; letter-spacing: 1px; font-size: 14px;">About Bhagirath Enterprise</span>
-                <h1 class="sec-title mb-4" style="color: #17385A; font-weight: 700; font-size: 2.2rem; line-height: 1.3;">Exporting the Finest Agricultural Wealth of India to the World.</h1>
+                <span class="sec-subtitle text-uppercase fw-bold" style="color: var(--accent-teal); letter-spacing: 1px; font-size: 14px;">About BS Surgical</span>
+                <h1 class="sec-title mb-4" style="color: var(--primary-blue); font-weight: 700; font-size: 2.2rem; line-height: 1.3;">Delivering Precision and Safety with Advanced Surgical Equipment.</h1>
                 <p class="about-desc mb-3" style="color: #555; line-height: 1.7;">
-                    <strong>Bhagirath Enterprise</strong> has established itself as a premier global exporter of high-quality agricultural commodities. Operating from the heart of Delhi, India, we bridge the gap between India's rich, fertile farms and international markets, delivering excellence in every shipment.
+                    <strong>BS Surgical</strong> has established itself as a premier provider of high-quality medical and surgical equipment. Operating from the heart of Delhi, India, we bridge the gap between advanced medical technology and healthcare professionals, delivering excellence in every product.
                 </p>
                 <p class="about-desc mb-4" style="color: #555; line-height: 1.7;">
-                    Specializing in the export of premium <strong>Whole Spices, Dry Fruits,</strong> and authentic agricultural products, we ensure that our global clientele receives 100% pure, unadulterated, and export-grade materials. Our stringent quality control, hygienic processing, and direct-from-farm sourcing make us a trusted partner in the international food trade.
+                    Specializing in the supply of premium <strong>ENT Operating Microscopes, Surgical Burs,</strong> and specialized clinical instruments, we ensure that our medical clientele receives 100% reliable, certified, and precision-grade materials. Our stringent quality control and direct partnerships with top manufacturers make us a trusted partner in the healthcare industry.
                 </p>
             </div>
         </div>
@@ -62,25 +61,25 @@ if (isset($conn)) {
         <div class="row g-4">
             <!-- Mission Card -->
             <div class="col-lg-6 reveal">
-                <div class="mv-card bg-white p-5 rounded-4 shadow-sm h-100" style="border-top: 4px solid #E3000F;">
-                    <div class="icon-wrap mb-4" style="width: 60px; height: 60px; background: rgba(227,0,15,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-bullseye mv-icon" style="font-size: 24px; color: #E3000F;"></i>
+                <div class="mv-card bg-white p-5 rounded-4 shadow-sm h-100" style="border-top: 4px solid var(--accent-teal);">
+                    <div class="icon-wrap mb-4" style="width: 60px; height: 60px; background: rgba(0,168,184,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-heart-pulse mv-icon" style="font-size: 24px; color: var(--accent-teal);"></i>
                     </div>
-                    <h3 class="mv-title" style="color: #17385A; font-weight: 700; margin-bottom: 15px;">Our Mission</h3>
+                    <h3 class="mv-title" style="color: var(--primary-blue); font-weight: 700; margin-bottom: 15px;">Our Mission</h3>
                     <p class="about-desc mb-0" style="color: #666; line-height: 1.6;">
-                        To consistently deliver superior quality agricultural products to global markets while maintaining ethical sourcing practices. We aim to empower local Indian farmers and provide international consumers with safe, hygienic, and authentic flavors.
+                        To consistently deliver superior quality surgical and medical equipment to healthcare facilities while maintaining ethical practices. We aim to empower doctors and surgeons by providing them with precise, safe, and technologically advanced instruments.
                     </p>
                 </div>
             </div>
             <!-- Vision Card -->
             <div class="col-lg-6 reveal">
-                <div class="mv-card bg-white p-5 rounded-4 shadow-sm h-100" style="border-top: 4px solid #17385A;">
+                <div class="mv-card bg-white p-5 rounded-4 shadow-sm h-100" style="border-top: 4px solid var(--primary-blue);">
                     <div class="icon-wrap mb-4" style="width: 60px; height: 60px; background: rgba(23,56,90,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-eye mv-icon" style="font-size: 24px; color: #17385A;"></i>
+                        <i class="fa-solid fa-eye mv-icon" style="font-size: 24px; color: var(--primary-blue);"></i>
                     </div>
-                    <h3 class="mv-title" style="color: #17385A; font-weight: 700; margin-bottom: 15px;">Our Vision</h3>
+                    <h3 class="mv-title" style="color: var(--primary-blue); font-weight: 700; margin-bottom: 15px;">Our Vision</h3>
                     <p class="about-desc mb-0" style="color: #666; line-height: 1.6;">
-                        To be the world's most reliable and sustainable partner in the agricultural export industry, recognized globally for our uncompromising quality standards, competitive pricing, and commitment to global food safety.
+                        To be the nation's most reliable and sustainable partner in the medical equipment supply industry, recognized for our uncompromising quality standards, competitive pricing, and commitment to improving patient care.
                     </p>
                 </div>
             </div>
@@ -93,8 +92,8 @@ if (isset($conn)) {
     <div class="container">
         <div class="row text-center mb-5 reveal">
             <div class="col-12">
-                <span class="sec-subtitle text-uppercase fw-bold" style="color: #E3000F; letter-spacing: 1px; font-size: 14px;">The Bhagirath Enterprise Advantage</span>
-                <h2 class="sec-title" style="color: #17385A; font-weight: 700;">Why Partner With Us?</h2>
+                <span class="sec-subtitle text-uppercase fw-bold" style="color: var(--accent-teal); letter-spacing: 1px; font-size: 14px;">The BS Surgical Advantage</span>
+                <h2 class="sec-title" style="color: var(--primary-blue); font-weight: 700;">Why Partner With Us?</h2>
             </div>
         </div>
 
@@ -102,42 +101,42 @@ if (isset($conn)) {
             <!-- Left Side Points -->
             <div class="col-lg-4 reveal">
                 <div class="wcu-list-item d-flex align-items-start mb-4">
-                    <div class="wcu-list-icon me-3 mt-1" style="color: #E3000F; font-size: 1.5rem;"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="wcu-list-icon me-3 mt-1" style="color: var(--accent-teal); font-size: 1.5rem;"><i class="fa-solid fa-microscope"></i></div>
                     <div class="wcu-list-content">
-                        <h4 style="color: #17385A; font-weight: 600; font-size: 1.1rem;">Farm-Fresh Sourcing</h4>
-                        <p class="small text-muted">We procure our dry fruits and spices directly from the most fertile and trusted agricultural regions.</p>
+                        <h4 style="color: var(--primary-blue); font-weight: 600; font-size: 1.1rem;">Advanced Technology</h4>
+                        <p class="small text-muted">We provide top-of-the-line Labomed operating microscopes and precision burs designed for critical surgical procedures.</p>
                     </div>
                 </div>
                 <div class="wcu-list-item d-flex align-items-start mb-4">
-                    <div class="wcu-list-icon me-3 mt-1" style="color: #E3000F; font-size: 1.5rem;"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="wcu-list-icon me-3 mt-1" style="color: var(--accent-teal); font-size: 1.5rem;"><i class="fa-solid fa-certificate"></i></div>
                     <div class="wcu-list-content">
-                        <h4 style="color: #17385A; font-weight: 600; font-size: 1.1rem;">Certified Quality</h4>
-                        <p class="small text-muted">Strict adherence to global food safety standards, fully compliant with international export boards.</p>
+                        <h4 style="color: var(--primary-blue); font-weight: 600; font-size: 1.1rem;">Certified Quality</h4>
+                        <p class="small text-muted">Strict adherence to global medical safety standards, fully compliant with international healthcare regulations.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Center Image -->
             <div class="col-lg-4 text-center reveal mb-4 mb-lg-0">
-                <div style="padding: 15px; border: 2px dashed #E3000F; border-radius: 50%; display: inline-block;">
-                    <img src="https://images.unsplash.com/photo-1493946243886-c4d6f4614ff3?q=80&w=600&auto=format&fit=crop" alt="Global Export" style="width: 100%; max-width: 300px; border-radius: 50%; object-fit: cover; aspect-ratio: 1/1;">
+                <div style="padding: 15px; border: 2px dashed var(--accent-teal); border-radius: 50%; display: inline-block;">
+                    <img src="assets/images/surgery-icon.jpg" alt="Precision Surgery" style="width: 100%; max-width: 300px; border-radius: 50%; object-fit: cover; aspect-ratio: 1/1;" onerror="this.src='https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=600&auto=format&fit=crop'">
                 </div>
             </div>
 
             <!-- Right Side Points -->
             <div class="col-lg-4 reveal">
                 <div class="wcu-list-item d-flex align-items-start mb-4">
-                    <div class="wcu-list-icon me-3 mt-1" style="color: #E3000F; font-size: 1.5rem;"><i class="fa-solid fa-box-open"></i></div>
+                    <div class="wcu-list-icon me-3 mt-1" style="color: var(--accent-teal); font-size: 1.5rem;"><i class="fa-solid fa-shield-halved"></i></div>
                     <div class="wcu-list-content">
-                        <h4 style="color: #17385A; font-weight: 600; font-size: 1.1rem;">Premium Export Packaging</h4>
-                        <p class="small text-muted">Moisture-proof, container-safe packaging that preserves aroma, taste, and product integrity during transit.</p>
+                        <h4 style="color: var(--primary-blue); font-weight: 600; font-size: 1.1rem;">Durability & Safety</h4>
+                        <p class="small text-muted">Our instruments are crafted for longevity, ensuring safety for both surgeons and patients during intensive operations.</p>
                     </div>
                 </div>
                 <div class="wcu-list-item d-flex align-items-start mb-4">
-                    <div class="wcu-list-icon me-3 mt-1" style="color: #E3000F; font-size: 1.5rem;"><i class="fa-solid fa-ship"></i></div>
+                    <div class="wcu-list-icon me-3 mt-1" style="color: var(--accent-teal); font-size: 1.5rem;"><i class="fa-solid fa-truck-medical"></i></div>
                     <div class="wcu-list-content">
-                        <h4 style="color: #17385A; font-weight: 600; font-size: 1.1rem;">Global Logistics</h4>
-                        <p class="small text-muted">A robust supply chain and freight network ensuring safe, hassle-free, and timely delivery across borders.</p>
+                        <h4 style="color: var(--primary-blue); font-weight: 600; font-size: 1.1rem;">Reliable Logistics</h4>
+                        <p class="small text-muted">A robust supply chain ensuring safe, secure, and timely delivery to hospitals and clinics across the country.</p>
                     </div>
                 </div>
             </div>
@@ -148,7 +147,7 @@ if (isset($conn)) {
 <!-- 4. Dynamic Brands / Clients Slider Section -->
 <section class="brands-slider-section py-5" style="background-color: #f8f9fa; border-top: 1px solid #eaeaea;">
     <div class="container">
-        <h2 class="text-center mb-5" style="color: #17385A; font-weight: 700; font-size: 1.5rem; letter-spacing: 1px;">OUR TRUSTED CLIENTS & PARTNERS</h2>
+        <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700; font-size: 1.5rem; letter-spacing: 1px;">OUR TRUSTED HOSPITALS & PARTNERS</h2>
         
         <div class="brand-slider-container">
             <div class="brand-slide-track">
@@ -170,9 +169,9 @@ if (isset($conn)) {
                     endfor; 
                     ?>
                 <?php else: ?>
-                    <div class="brand-slide"><h4 class="brand-logo" style="color: #999;">FSSAI</h4></div>
-                    <div class="brand-slide"><h4 class="brand-logo" style="color: #999;">APEDA</h4></div>
-                    <div class="brand-slide"><h4 class="brand-logo" style="color: #999;">SPICES BOARD</h4></div>
+                    <div class="brand-slide"><h4 class="brand-logo" style="color: #999;">ISO Certified</h4></div>
+                    <div class="brand-slide"><h4 class="brand-logo" style="color: #999;">CE Mark</h4></div>
+                    <div class="brand-slide"><h4 class="brand-logo" style="color: #999;">FDA Approved</h4></div>
                 <?php endif; ?>
             </div>
         </div>
@@ -184,44 +183,40 @@ if (isset($conn)) {
     <div class="container">
         <div class="row text-center mb-4 reveal">
             <div class="col-12">
-                <span class="sec-subtitle" style="color: #ffffff;">Our Supply Chain</span>
-                <h2 class="sec-title" style="color: #ffffff;">The Export Process</h2>
+                <span class="sec-subtitle" style="color: #ffffff;">Our Process</span>
+                <h2 class="sec-title" style="color: #ffffff;">How We Supply</h2>
             </div>
         </div>
 
         <div class="process-grid reveal">
             <!-- Step 1 -->
             <div class="process-step">
-                <div class="process-icon"><i class="fa-solid fa-tractor"></i></div>
-                <h4>1. Ethical Sourcing</h4>
-                <p>Procuring premium raw materials straight from certified farmers.</p>
+                <div class="process-icon"><i class="fa-solid fa-handshake"></i></div>
+                <h4>1. Consultation</h4>
+                <p>Understanding specific equipment needs for your healthcare facility.</p>
             </div>
             <!-- Step 2 -->
             <div class="process-step">
-                <div class="process-icon"><i class="fa-solid fa-gears"></i></div>
-                <h4>2. Processing & Grading</h4>
-                <p>Hygienic sorting, cleaning, and processing in our modern facilities.</p>
+                <div class="process-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <h4>2. Quality Sourcing</h4>
+                <p>Procuring certified instruments and microscopes from top manufacturers.</p>
             </div>
             <!-- Step 3 -->
             <div class="process-step">
-                <div class="process-icon"><i class="fa-solid fa-microscope"></i></div>
-                <h4>3. Quality Assurance</h4>
-                <p>Rigorous lab testing to ensure export-grade purity and compliance.</p>
+                <div class="process-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                <h4>3. Testing & Calibration</h4>
+                <p>Rigorous pre-dispatch testing to ensure flawless precision.</p>
             </div>
             <!-- Step 4 -->
             <div class="process-step">
-                <div class="process-icon"><i class="fa-solid fa-globe"></i></div>
-                <h4>4. Secure Export</h4>
-                <p>Customs clearance and container shipping to international destinations.</p>
+                <div class="process-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <h4>4. Safe Delivery</h4>
+                <p>Secure installation and delivery at hospitals and clinics.</p>
             </div>
         </div>
     </div>
 </section>
 
-
-
-
-<!-- Simple CSS for smooth reveals on scroll (If not already in your CSS file) -->
 <style>
     .reveal {
         opacity: 0;
@@ -232,7 +227,6 @@ if (isset($conn)) {
         opacity: 1;
         transform: translateY(0);
     }
-    /* Adding connecting lines for process steps on desktop */
     @media (min-width: 992px) {
         .process-step:not(:last-child)::after {
             content: '';
@@ -252,8 +246,6 @@ if (isset($conn)) {
     }
 </style>
 
-
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const reveals = document.querySelectorAll(".reveal");
@@ -271,5 +263,5 @@ if (isset($conn)) {
         reveals.forEach(reveal => revealOnScroll.observe(reveal));
     });
 </script>
-<!-- Include Footer -->
+
 <?php include 'includes/footer.php'; ?>

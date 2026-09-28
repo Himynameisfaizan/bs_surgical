@@ -26,7 +26,7 @@ $product_id = $product['id'];
 // Fetch Global Contact Info for Call Buttons
 $contactQuery = mysqli_query($conn, "SELECT phone FROM contacts LIMIT 1");
 $contactInfo = mysqli_fetch_assoc($contactQuery);
-$sitePhone = !empty($contactInfo['phone']) ? $contactInfo['phone'] : '+91-8448211202';
+$sitePhone = !empty($contactInfo['phone']) ? $contactInfo['phone'] : '+91-8595803224';
 
 // -------------------------------------------------------------
 // REVIEW SUBMISSION LOGIC (With PRG Pattern)
@@ -97,11 +97,11 @@ include 'includes/breadcrumb.php';
             <div class="col-lg-5 mb-5 mb-lg-0 reveal" style="height: auto !important;">
                 <div class="pd-image-gallery position-relative" style="height: auto !important;">
                     
-                    <!-- Top Left Badges -->
+                    <!-- Top Left Badges - Updated for Medical Theme -->
                     <div class="position-absolute top-0 start-0 p-2" style="z-index: 10;">
-                        <span class="badge bg-success mb-2 d-block shadow-sm" style="font-size: 13px;"><i class="fa-solid fa-leaf me-1"></i> 100% Natural</span>
+                        <span class="badge mb-2 d-block shadow-sm" style="background-color: #00A8B8; font-size: 13px;"><i class="fa-solid fa-microscope me-1"></i> Medical Grade</span>
                         <?php if($product['trending'] == 1): ?>
-                            <span class="badge bg-danger shadow-sm" style="font-size: 13px;"><i class="fa-solid fa-fire me-1"></i> Hot Selling</span>
+                            <span class="badge bg-danger shadow-sm" style="font-size: 13px;"><i class="fa-solid fa-star me-1"></i> Top Rated</span>
                         <?php endif; ?>
                     </div>
 
@@ -132,11 +132,8 @@ include 'includes/breadcrumb.php';
             <!-- Right Column: Product Overview -->
             <!-- FIXED: Added mt-4 and clear:both to push text securely below image on mobile -->
             <div class="col-lg-7 ps-lg-4 mt-4 mt-lg-0 reveal" style="clear: both; position: relative; z-index: 2;">
-                <span class="pd-category text-muted fw-bold text-uppercase" style="letter-spacing: 1px; font-size: 13px; display: inline-block; padding-top: 10px;"><?php echo htmlspecialchars($product['brand_name']); ?></span>
+                <span class="pd-category text-muted fw-bold text-uppercase" style="color: #00A8B8 !important; letter-spacing: 1px; font-size: 13px; display: inline-block; padding-top: 10px;"><?php echo htmlspecialchars($product['brand_name']); ?></span>
                 
-                <!-- <h1 class="pd-title fw-bolder mt-1 mb-3" style="color: #222; font-size: 2.2rem; line-height: 1.2;"><?php echo htmlspecialchars($product['pro_name']); ?></h1> -->
-                
-                <!-- Short Description -->
                 <div class="pd-overview mb-4" style="color: #444; line-height: 1.7; font-size: 1.05rem;">
                     <?php echo $product['short_desc']; ?>
                 </div>
@@ -154,25 +151,25 @@ include 'includes/breadcrumb.php';
                     <span class="text-muted fw-bold">(<?php echo $avg_rating; ?>/5) based on <?php echo $total_reviews; ?> Reviews</span>
                 </div>
                 
-                <!-- Trust Badges Line -->
+                <!-- Trust Badges Line - Medical Context -->
                 <div class="d-flex flex-wrap gap-4 mb-4 py-3 border-top border-bottom">
-                    <span class="d-flex align-items-center fw-bold" style="color: #2b5e2c; font-size: 14px;">
-                        <i class="fa-solid fa-circle-check fs-5 me-2"></i> Quality Tested
+                    <span class="d-flex align-items-center fw-bold" style="color: #17385A; font-size: 14px;">
+                        <i class="fa-solid fa-certificate fs-5 me-2" style="color: #00A8B8;"></i> ISO Certified
                     </span>
-                    <span class="d-flex align-items-center fw-bold" style="color: #2b5e2c; font-size: 14px;">
-                        <i class="fa-solid fa-truck-fast fs-5 me-2"></i> Global Shipping
+                    <span class="d-flex align-items-center fw-bold" style="color: #17385A; font-size: 14px;">
+                        <i class="fa-solid fa-crosshairs fs-5 me-2" style="color: #00A8B8;"></i> Precision Tested
                     </span>
-                    <span class="d-flex align-items-center fw-bold" style="color: #2b5e2c; font-size: 14px;">
-                        <i class="fa-solid fa-handshake-angle fs-5 me-2"></i> Verified Supplier
+                    <span class="d-flex align-items-center fw-bold" style="color: #17385A; font-size: 14px;">
+                        <i class="fa-solid fa-truck-medical fs-5 me-2" style="color: #00A8B8;"></i> Safe Delivery
                     </span>
                 </div>
 
                 <!-- Action Buttons -->
                 <div class="pd-action-btns d-flex flex-wrap gap-3">
-                    <a href="contact.php?product=<?php echo urlencode($product['pro_name']); ?>" class="btn px-4 py-2 text-white fw-bold shadow-sm" style="background: var(--accent-orange); border-radius: 6px; font-size: 1.1rem;">
+                    <a href="contact.php?product=<?php echo urlencode($product['pro_name']); ?>" class="btn px-4 py-2 text-white fw-bold shadow-sm" style="background: #17385A; border-radius: 6px; font-size: 1.1rem;">
                         Request a Quote <i class="fa-solid fa-file-invoice ms-2"></i>
                     </a>
-                    <a href="tel:<?php echo $sitePhone; ?>" class="btn px-4 py-2 border fw-bold shadow-sm" style="color: var(--primary-green); border-color: var(--primary-green) !important; border-radius: 6px; font-size: 1.1rem; background: #fff;">
+                    <a href="tel:<?php echo $sitePhone; ?>" class="btn px-4 py-2 border fw-bold shadow-sm" style="color: #00A8B8; border-color: #00A8B8 !important; border-radius: 6px; font-size: 1.1rem; background: #fff;">
                         <i class="fa-solid fa-phone me-2"></i> Call Enquiry
                     </a>
                 </div>
@@ -185,7 +182,7 @@ include 'includes/breadcrumb.php';
             <!-- Left Side: Full Description -->
             <div class="col-lg-7 mb-4 mb-lg-0 reveal">
                 <div class="bg-white p-3 p-md-4 rounded shadow-sm border border-light h-100">
-                    <h3 class="border-bottom pb-3 mb-4 fw-bold" style="color: #222;">Product Details</h3>
+                    <h3 class="border-bottom pb-3 mb-4 fw-bold" style="color: #17385A;">Product Details</h3>
                     <div class="full-description-content" style="color: #444; line-height: 1.8;">
                         <?php echo $product['description']; ?>
                     </div>
@@ -195,7 +192,7 @@ include 'includes/breadcrumb.php';
             <!-- Right Side: Reviews & Ratings -->
             <div class="col-lg-5 reveal">
                 <div class="bg-white p-3 p-md-4 rounded shadow-sm border border-light h-100">
-                    <h3 class="border-bottom pb-3 mb-4 fw-bold" style="color: #222;">Customer Reviews</h3>
+                    <h3 class="border-bottom pb-3 mb-4 fw-bold" style="color: #17385A;">Customer Reviews</h3>
                     
                     <!-- Add Review Form -->
                     <div class="review-form-box p-3 rounded mb-4" style="background: #f9f9f9; border: 1px solid #eaeaea;">
@@ -222,9 +219,9 @@ include 'includes/breadcrumb.php';
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <textarea name="review_text" rows="2" class="form-control form-control-sm" placeholder="Write your experience with this product..." required></textarea>
+                                <textarea name="review_text" rows="2" class="form-control form-control-sm" placeholder="Write your experience with this equipment..." required></textarea>
                             </div>
-                            <button type="submit" name="submit_review" class="btn w-100 fw-bold text-white shadow-sm btn-sm py-2" style="background: var(--primary-green);">Submit Review</button>
+                            <button type="submit" name="submit_review" class="btn w-100 fw-bold text-white shadow-sm btn-sm py-2" style="background: #00A8B8;">Submit Review</button>
                         </form>
                     </div>
 
@@ -267,15 +264,15 @@ include 'includes/breadcrumb.php';
     <div class="container">
         <!-- Section Title -->
         <div class="text-center mb-5 reveal">
-            <h2 style="font-size: 2rem; font-weight: 800; color: #222222;">Explore Related Products</h2>
-            <div style="width: 60px; height: 3px; background: var(--primary-green); margin: 15px auto;"></div>
+            <h2 style="font-size: 2rem; font-weight: 800; color: #17385A;">Explore Related Equipment</h2>
+            <div style="width: 60px; height: 3px; background: #00A8B8; margin: 15px auto;"></div>
         </div>
 
         <div class="row g-4 reveal">
             <?php
             $relatedQuery = mysqli_query($conn, "SELECT * FROM products WHERE status = 1 AND id != '$product_id' ORDER BY RAND() LIMIT 4");
             while ($related = mysqli_fetch_assoc($relatedQuery)):
-                $shortDesc = !empty($related['short_desc']) ? $related['short_desc'] : (!empty($related['meta_desc']) && $related['meta_desc'] != $related['pro_name'] ? $related['meta_desc'] : 'Premium quality agricultural export product sourced directly from Indian farms.');
+                $shortDesc = !empty($related['short_desc']) ? $related['short_desc'] : (!empty($related['meta_desc']) && $related['meta_desc'] != $related['pro_name'] ? $related['meta_desc'] : 'Premium quality medical equipment for precision healthcare.');
             ?>
                 <div class="col-lg-3 col-md-6">
                     <div class="product-card h-100 d-flex flex-column" style="border: 1px solid #f0f0f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); background: #ffffff;">
@@ -300,10 +297,10 @@ include 'includes/breadcrumb.php';
                             </p>
 
                             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 12px; margin-top: auto;">
-                                <a href="product-details.php?slug=<?php echo $related['slug_url']; ?>" style="color: var(--primary-green); text-decoration: none; font-weight: 600; font-size: 13px;">
+                                <a href="product-details.php?slug=<?php echo $related['slug_url']; ?>" style="color: #00A8B8; text-decoration: none; font-weight: 600; font-size: 13px;">
                                     View Details <i class="bi bi-arrow-right ms-1"></i>
                                 </a>
-                                <a href="contact.php?product=<?php echo urlencode($related['pro_name']); ?>" style="background-color: var(--accent-orange); color: white; padding: 6px 12px; border-radius: 4px; font-weight: 600; font-size: 12px; text-decoration: none;">
+                                <a href="contact.php?product=<?php echo urlencode($related['pro_name']); ?>" style="background-color: #17385A; color: white; padding: 6px 12px; border-radius: 4px; font-weight: 600; font-size: 12px; text-decoration: none;">
                                     Request Quote
                                 </a>
                             </div>
@@ -328,7 +325,7 @@ include 'includes/breadcrumb.php';
         });
 
         element.classList.add('active');
-        element.style.borderColor = 'var(--primary-green)';
+        element.style.borderColor = '#00A8B8';
     }
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -356,7 +353,7 @@ include 'includes/breadcrumb.php';
     .reviews-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
     .reviews-list::-webkit-scrollbar-thumb:hover { background: #aaa; }
     
-    .pd-thumb.active { border: 2px solid var(--primary-green) !important; opacity: 1 !important; }
+    .pd-thumb.active { border: 2px solid #00A8B8 !important; opacity: 1 !important; }
     .pd-thumb { border: 2px solid transparent; opacity: 0.6; transition: all 0.3s; }
     .pd-thumb:hover { opacity: 1; }
     
@@ -364,8 +361,7 @@ include 'includes/breadcrumb.php';
     .full-description-content img { max-width: 100%; height: auto; }
     @media (max-width: 768px) {
     .pd-section .container-ng{ padding: 0 5px;}
-
-            }
+    }
 </style>
 
 <?php include 'includes/footer.php'; ?>

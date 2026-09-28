@@ -1,9 +1,9 @@
 :root {
   /* Brand Theme Colors */
-  --primary-green: #212529;
-  --primary-green-dark: #222222;
-  --accent-orange: #e67e22;
-  --accent-orange-dark: #d35400;
+  --primary-brand: #17385A; /* Dark Blue */
+  --primary-brand-dark: #0f2740;
+  --accent-teal: #00A8B8; /* Teal Accent */
+  --accent-teal-dark: #008b98;
   
   /* Background & Text Colors */
   --bg-light: #f9fafb;
@@ -36,7 +36,7 @@
 }
 
 .sec-subtitle {
-  color: var(--accent-orange);
+  color: var(--accent-teal);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -48,7 +48,7 @@
 .sec-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--primary-green) !important;
+  color: var(--primary-brand) !important;
   margin-bottom: 20px;
   line-height: 1.2;
 }
@@ -74,15 +74,15 @@
 .info-card:hover {
   transform: translateX(10px);
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(43, 94, 44, 0.08); /* Slight green shadow */
-  border-color: var(--primary-green);
+  box-shadow: 0 10px 30px rgba(0, 168, 184, 0.08); /* Slight teal shadow */
+  border-color: var(--primary-brand);
 }
 
 .info-icon {
   width: 55px;
   height: 55px;
-  background: rgba(43, 94, 44, 0.1);
-  color: var(--primary-green);
+  background: rgba(0, 168, 184, 0.1);
+  color: var(--accent-teal);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -94,9 +94,9 @@
 }
 
 .info-card:hover .info-icon {
-  background: var(--primary-green);
+  background: var(--primary-brand);
   color: #ffffff;
-  box-shadow: 0 5px 15px rgba(43, 94, 44, 0.2);
+  box-shadow: 0 5px 15px rgba(23, 56, 90, 0.2);
 }
 
 .info-content h4 {
@@ -117,7 +117,7 @@
 }
 
 .info-content a:hover {
-  color: var(--accent-orange);
+  color: var(--accent-teal);
   font-weight: 600;
 }
 
@@ -142,7 +142,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary-green), var(--accent-orange));
+  background: linear-gradient(90deg, var(--primary-brand), var(--accent-teal));
 }
 
 .contact-form-box h3 {
@@ -178,8 +178,8 @@
 .form-control:focus,
 .form-select:focus {
   background: #ffffff;
-  border-color: var(--accent-orange);
-  box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.15); /* Orange glow on focus */
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 4px rgba(0, 168, 184, 0.15); /* Teal glow on focus */
 }
 
 textarea.form-control {
@@ -188,7 +188,7 @@ textarea.form-control {
 }
 
 .btn-submit {
-  background: var(--primary-green); /* Primary button color */
+  background: var(--primary-brand); /* Primary Blue button color */
   color: #ffffff;
   border: none;
   padding: 16px 35px;
@@ -198,15 +198,15 @@ textarea.form-control {
   cursor: pointer;
   width: 100%;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(43, 94, 44, 0.25);
+  box-shadow: 0 6px 20px rgba(23, 56, 90, 0.25);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .btn-submit:hover {
-  background: var(--accent-orange); /* Hover color changes to Orange */
+  background: var(--accent-teal); /* Hover color changes to Teal */
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(230, 126, 34, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 168, 184, 0.3);
 }
 
 /* ==============================
@@ -259,7 +259,7 @@ textarea.form-control {
 
 .faq-accordion .accordion-button:not(.collapsed) {
   color: #ffffff;
-  background-color: var(--primary-green);
+  background-color: var(--primary-brand);
 }
 
 /* Change the default bootstrap arrow color when active */

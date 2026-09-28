@@ -1,11 +1,11 @@
 <?php
 include 'config/connect.php';
-$pageTitle = "Our Products | Bhagirath Enterprise";
+$pageTitle = "Our Products | BS Surgical";
 
 // Fetch Global Contact Info for Call Buttons
 $contactQuery = mysqli_query($conn, "SELECT phone FROM contacts LIMIT 1");
 $contactInfo = mysqli_fetch_assoc($contactQuery);
-$sitePhone = !empty($contactInfo['phone']) ? $contactInfo['phone'] : '+91-8448211202';
+$sitePhone = !empty($contactInfo['phone']) ? $contactInfo['phone'] : '+91-8595803224';
 
 $whereClause = "WHERE status = 1";
 $urlParams = [];
@@ -119,7 +119,7 @@ include 'includes/breadcrumb.php';
                     <div class="sidebar-widget text-center support-banner">
                         <i class="fa-solid fa-headset banner-icon"></i>
                         <h5>Need Help?</h5>
-                        <p>Contact our export team for bulk orders.</p>
+                        <p>Contact our medical team for clinic setups & bulk orders.</p>
                         <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', $sitePhone); ?>"><?php echo $sitePhone; ?></a>
                     </div>
                 </div>
@@ -146,21 +146,21 @@ include 'includes/breadcrumb.php';
                             if (isset($_GET['search'])) $sortParams[] = "search=" . $_GET['search'];
                             if (!empty($sortParams)) $sortBaseUrl .= implode("&", $sortParams) . "&";
                             ?>
-                            <option value="<?php echo $sortBaseUrl; ?>sort=latest" <?php echo (!isset($_GET['sort']) || $_GET['sort'] == 'latest') ? 'selected' : ''; ?>>Latest Products</option>
-                            <option value="<?php echo $sortBaseUrl; ?>sort=oldest" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'oldest') ? 'selected' : ''; ?>>Oldest Products</option>
+                            <option value="<?php echo $sortBaseUrl; ?>sort=latest" <?php echo (!isset($_GET['sort']) || $_GET['sort'] == 'latest') ? 'selected' : ''; ?>>Latest Equipment</option>
+                            <option value="<?php echo $sortBaseUrl; ?>sort=oldest" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'oldest') ? 'selected' : ''; ?>>Oldest Equipment</option>
                             <option value="<?php echo $sortBaseUrl; ?>sort=name_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'name_asc') ? 'selected' : ''; ?>>Name: A to Z</option>
                             <option value="<?php echo $sortBaseUrl; ?>sort=name_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'name_desc') ? 'selected' : ''; ?>>Name: Z to A</option>
                         </select>
                     </div>
                 </div>
 
-                <!-- Products Grid (UPDATED DESIGN) -->
+                <!-- Products Grid -->
                 <div class="row g-4">
                     <?php
                     if ($total_records > 0) {
                         while ($product = mysqli_fetch_assoc($productsQuery)):
 
-                            $shortDesc = !empty($product['short_desc']) ? $product['short_desc'] : (!empty($product['meta_desc']) && $product['meta_desc'] != $product['pro_name'] ? $product['meta_desc'] : 'Premium quality agricultural export product sourced from India.');
+                            $shortDesc = !empty($product['short_desc']) ? $product['short_desc'] : (!empty($product['meta_desc']) && $product['meta_desc'] != $product['pro_name'] ? $product['meta_desc'] : 'Precision medical equipment for advanced surgical procedures.');
                     ?>
                             <div class="col-lg-4 col-md-6 col-12 reveal">
                                 <div class="product-card h-100 shadow-sm border rounded overflow-hidden d-flex flex-column" style="background: #ffffff; transition: all 0.3s ease;">
@@ -172,7 +172,7 @@ include 'includes/breadcrumb.php';
 
                                     <div class="product-content p-4 d-flex flex-column flex-grow-1">
                                         <a href="product-details.php?slug=<?php echo $product['slug_url']; ?>" style="text-decoration: none;">
-                                            <h3 class="product-title" style="font-size: 1.15rem; font-weight: 700; color: #222222; margin-bottom: 8px;">
+                                            <h3 class="product-title" style="font-size: 1.15rem; font-weight: 700; color: #17385A; margin-bottom: 8px;">
                                                 <?php echo htmlspecialchars($product['pro_name']); ?>
                                             </h3>
                                         </a>
@@ -184,10 +184,10 @@ include 'includes/breadcrumb.php';
 
                                         <!-- Action Buttons (Left: View Details, Right: Quote) -->
                                         <div class="product-actions mt-auto d-flex justify-content-between align-items-center border-top pt-3">
-                                            <a href="product-details.php?slug=<?php echo $product['slug_url']; ?>" class="view-details-link small fw-bold" style="color: #711b3c; text-decoration: none; transition: 0.3s;">
+                                            <a href="product-details.php?slug=<?php echo $product['slug_url']; ?>" class="view-details-link small fw-bold" style="color: #00A8B8; text-decoration: none; transition: 0.3s;">
                                                 View Details <i class="bi bi-arrow-right ms-1"></i>
                                             </a>
-                                            <a href="contact.php?product=<?php echo urlencode($product['pro_name']); ?>" class="btn-quote-full small px-3 py-2 rounded" style="background-color: #222222; color: white; text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                                            <a href="contact.php?product=<?php echo urlencode($product['pro_name']); ?>" class="btn-quote-full small px-3 py-2 rounded" style="background-color: #17385A; color: white; border: 1px solid #17385A; text-decoration: none; font-weight: 600; transition: all 0.3s;">
                                                 Request Quote
                                             </a>
                                         </div>
@@ -199,10 +199,10 @@ include 'includes/breadcrumb.php';
                     } else {
                         echo "
                         <div class='col-12 text-center py-5'>
-                            <i class='fa-solid fa-box-open' style='font-size: 50px; color: #ccc; margin-bottom: 15px;'></i>
-                            <h3 style='color: #222222;'>No Products Found</h3>
+                            <i class='fa-solid fa-microscope' style='font-size: 50px; color: #ccc; margin-bottom: 15px;'></i>
+                            <h3 style='color: #222222;'>No Equipment Found</h3>
                             <p style='color: #666;'>Try selecting a different category or search term.</p>
-                            <a href='products.php' class='btn-quote-full mt-3 px-4 py-2 rounded' style='background: #711b3c; color: white; display:inline-block; text-decoration:none;'>Clear All Filters</a>
+                            <a href='products.php' class='btn-quote-full mt-3 px-4 py-2 rounded' style='background: #17385A; color: white; display:inline-block; text-decoration:none;'>Clear All Filters</a>
                         </div>";
                     }
                     ?>

@@ -2,20 +2,20 @@
 $current_page = basename($_SERVER['PHP_SELF']);
 
 if (!isset($pageTitle)) { 
-    $pageTitle = "Bhagirath Enterprise | Premium Agricultural Exports"; 
+    $pageTitle = "BS Surgical | Precision Medical Equipment"; 
 }
 if (!isset($meta_description)) { 
-    $meta_description = "Bhagirath Enterprise is a trusted global exporter of premium quality dry fruits, whole spices, and authentic Indian agricultural products."; 
+    $meta_description = "BS Surgical is a trusted provider of premium quality medical equipment, surgical instruments, and advanced ENT operating microscopes."; 
 }
 if (!isset($meta_keywords)) { 
-    $meta_keywords = "Bhagirath Enterprise, agricultural exports, Indian spices, dry fruits exporter, wholesale spices"; 
+    $meta_keywords = "BS Surgical, medical equipment, surgical instruments, operating microscopes, ENT burs, hospital supplies"; 
 }
 
 $header_logo = "assets/images/logo/logo.png"; 
 $favicon = "assets/images/logo/favicon.png"; 
 
-$t_phone = "+91-8448211202";
-$t_email = "bhagirathenterprise7@gmail.com";
+$t_phone = "+91-8595803224";
+$t_email = "bssurgicals@gmail.com";
 $t_fb = "#"; $t_linkedin = "#"; $t_wp = "#";
 
 if (isset($conn)) {
@@ -109,21 +109,21 @@ if (isset($conn)) {
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Bhagirath Enterprise",
-        "url": "https://bhagirathenterprises.co.in/",
-        "logo": "https://bhagirathenterprises.co.in/assets/images/logo/logo.png",
+        "name": "BS Surgical",
+        "url": "https://bssurgicals.com/",
+        "logo": "https://bssurgicals.com/assets/images/logo/logo.png",
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+91-8448211202",
+            "telephone": "+91-8595803224",
             "contactType": "customer service",
             "areaServed": "IN",
             "availableLanguage": ["en", "hi"]
         },
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Office No-102, 1st Floor, Nitika Tower II, Block C-1, Pocket-4, Azadpur",
-            "addressLocality": "Delhi",
-            "postalCode": "110033",
+            "streetAddress": "Plot no. 2 Upper Ground Floor, Kailash Puram, Govindpuram",
+            "addressLocality": "Ghaziabad, Uttar Pradesh",
+            "postalCode": "201013",
             "addressCountry": "IN"
         },
         "sameAs": [
@@ -140,9 +140,6 @@ if (isset($conn)) {
         echo $page_schema;
     } 
     ?>
-    
-</head>
-<body>
     
 </head>
 <body>
@@ -172,7 +169,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
         
         <a class="navbar-brand d-flex align-items-center" href="index.php" style="max-width: 70vw;">
-            <img src="<?= htmlspecialchars($header_logo); ?>" alt="Bhagirath Enterprise Logo" class="logo-animate img-fluid" style="max-height: 65px; object-fit: contain;" onerror="this.src='assets/images/logo/logo.png'">
+            <img src="<?= htmlspecialchars($header_logo); ?>" alt="BS Surgical Logo" class="logo-animate img-fluid" style="max-height: 65px; object-fit: contain;" onerror="this.src='assets/images/logo/logo.png'">
         </a>
         
         <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">

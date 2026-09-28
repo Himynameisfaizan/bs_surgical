@@ -1,6 +1,6 @@
 :root {
-  --primary-green: #2b5e2c;
-  --accent-orange: #e67e22;
+  --primary-blue: #17385A; /* 30% Dark Blue */
+  --accent-teal: #00A8B8;  /* 10% Teal Color */
   --bg-light: #f9fafb;
   --text-dark: #1a1a1a;
   --text-muted: #666666;
@@ -46,7 +46,7 @@
 }
 
 .sec-subtitle {
-  color: var(--accent-orange);
+  color: var(--accent-teal);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -58,7 +58,7 @@
 .sec-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -91,12 +91,12 @@
 .mv-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  border-top-color: var(--accent-orange);
+  border-top-color: var(--accent-teal);
 }
 
 .mv-icon {
   font-size: 3.5rem;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: 20px;
 }
 
@@ -124,8 +124,8 @@
 .wcu-list-icon {
   width: 60px;
   height: 60px;
-  background: rgba(230, 126, 34, 0.1);
-  color: var(--accent-orange);
+  background: rgba(0, 168, 184, 0.1);
+  color: var(--accent-teal);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -137,7 +137,7 @@
 }
 
 .wcu-list-item:hover .wcu-list-icon {
-  background: var(--accent-orange);
+  background: var(--accent-teal);
   color: #ffffff;
 }
 
@@ -157,7 +157,7 @@
        ============================== */
 .process-section {
   padding: 100px 0;
-  background: #17385A;
+  background: var(--primary-blue);
   color: #ffffff;
 }
 
@@ -191,7 +191,7 @@
   width: 80px;
   height: 80px;
   background: #ffffff;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -204,7 +204,7 @@
 
 .process-step:hover .process-icon {
   transform: scale(1.1);
-  color: var(--accent-orange);
+  color: var(--accent-teal);
 }
 
 .process-step h4 {
@@ -244,7 +244,7 @@
 }
 
 .custom-accordion .accordion-button:not(.collapsed) {
-  background: var(--primary-green);
+  background: var(--primary-blue);
   color: #ffffff;
 }
 
@@ -253,7 +253,7 @@
 }
 
 .custom-accordion .accordion-button:not(.collapsed)::after {
-  filter: brightness(0) invert(1); /* Changes icon to white */
+  filter: brightness(0) invert(1);
 }
 
 .custom-accordion .accordion-body {
@@ -271,7 +271,7 @@
   }
   .process-grid::before {
     display: none;
-  } /* Hide line on mobile */
+  }
   .about-image-collage {
     margin-bottom: 50px;
   }
@@ -282,100 +282,5 @@
   }
   .sec-title {
     font-size: 2rem;
-  }
-}
-
-/* ==============================
-       GLOBAL & UTILITY STYLES
-       ============================== */
-:root {
-  --primary-green: #2b5e2c;
-  --accent-orange: #e67e22;
-  --text-dark: #1a1a1a;
-  --text-muted: #666666;
-  --bg-light: #f9fafb;
-}
-
-.section-padding {
-  padding: 100px 0;
-}
-.bg-light-gray {
-  background-color: var(--bg-light);
-}
-
-/* Scroll Reveal Animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Section Headings */
-.sec-subtitle {
-  color: var(--accent-orange);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 14px;
-  display: block;
-  margin-bottom: 10px;
-}
-.sec-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--primary-green);
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-/* ==============================
-       4. FAQ ACCORDION STYLING
-       ============================== */
-.faq-accordion .accordion-item {
-  border: none;
-  border-radius: 12px !important;
-  margin-bottom: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-  overflow: hidden;
-}
-.faq-accordion .accordion-button {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  padding: 20px 25px;
-  background-color: #fff;
-  box-shadow: none;
-}
-.faq-accordion .accordion-button:not(.collapsed) {
-  color: var(--primary-green);
-  background-color: rgba(43, 94, 44, 0.03);
-}
-.faq-accordion .accordion-button::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 16 16' fill='%232B5E2C'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-}
-.faq-accordion .accordion-body {
-  padding: 0 25px 25px 25px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  background-color: rgba(43, 94, 44, 0.03);
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-  .about-image-grid {
-    display: block;
-  }
-  .about-img-2 {
-    display: none;
-  } /* Hide staggered image on mobile */
-  .process-row::after {
-    display: none;
-  } /* Remove connecting line on mobile */
-  .process-step {
-    margin-bottom: 40px;
   }
 }

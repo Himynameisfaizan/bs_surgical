@@ -2,7 +2,7 @@
    TOPBAR STYLING
    ===================================== */
 .topbar {
-  background-color: #711b3c; /* Brand Maroon */
+  background-color: #17385A; /* Brand Dark Blue */
   color: #ffffff;
   font-size: 0.9rem;
 }
@@ -31,7 +31,7 @@
 
 .topbar-right a:hover {
   background: #ffffff;
-  color: #711b3c;
+  color: #17385A; /* Hover color changed to Dark Blue */
   transform: translateY(-2px);
 }
 
@@ -56,7 +56,7 @@
 
 /* Navigation Links */
 .custom-navbar .nav-link {
-  color: #222222 !important; /* Brand Charcoal */
+  color: #222222 !important;
   font-weight: 600;
   font-size: 16px;
   margin: 0 12px;
@@ -64,10 +64,10 @@
   transition: color 0.3s ease;
 }
 
-/* Hover & Active State (Maroon Highlight) */
+/* Hover & Active State (Teal Highlight) */
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
-  color: #711b3c !important; /* Brand Maroon */
+  color: #00A8B8 !important; /* Accent Teal */
 }
 
 /* Smooth Bottom Border Animation */
@@ -78,7 +78,7 @@
   height: 3px;
   bottom: -5px;
   left: 0;
-  background-color: #711b3c;
+  background-color: #00A8B8; /* Accent Teal */
   transition: width 0.3s ease;
   border-radius: 2px;
 }
@@ -116,33 +116,33 @@
 
 .dropdown-item:hover,
 .active-dropdown-item {
-  background-color: rgba(113, 27, 60, 0.05);
-  color: #711b3c !important;
+  background-color: rgba(0, 168, 184, 0.05); /* Soft Teal bg */
+  color: #00A8B8 !important; /* Teal text */
   font-weight: 700;
-  padding-left: 25px; /* Slight indent on hover/active */
+  padding-left: 25px;
 }
 
 /* Premium Call to Action Button */
 .btn-quote {
-  background-color: #711b3c;
+  background-color: #17385A; /* Dark Blue */
   color: white;
   border-radius: 30px;
   padding: 8px 24px;
   font-weight: 600;
-  border: 2px solid #711b3c;
+  border: 2px solid #17385A;
   transition: all 0.3s ease;
 }
 .btn-quote:hover {
   background-color: transparent;
-  color: #711b3c;
+  color: #17385A;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(113, 27, 60, 0.2);
+  box-shadow: 0 4px 12px rgba(23, 56, 90, 0.2);
 }
 
 /* Mobile specific adjustments */
 @media (max-width: 991px) {
   .custom-navbar .nav-link::after {
-    display: none; /* Mobile mein underline hide */
+    display: none;
   }
   .nav-item {
     margin-bottom: 5px;
@@ -151,29 +151,29 @@
   .custom-navbar {
     padding: 15px 0;
   }
-  /* Ensure mobile toggler outline is removed */
   .navbar-toggler:focus {
     box-shadow: none;
   }
 }
+
 /* ==============================
-       BREADCRUMB SECTION STYLING
-       ============================== */
+   BREADCRUMB SECTION STYLING
+   ============================== */
 .breadcrumb-wrapper {
   background:
-    linear-gradient(rgba(113, 27, 60, 0.9), rgba(34, 34, 34, 0.95)), /* Maroon to Charcoal Gradient */
-    url("https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2000&auto=format&fit=crop")
+    linear-gradient(rgba(23, 56, 90, 0.9), rgba(34, 34, 34, 0.95)), /* Dark Blue to Charcoal Gradient */
+    url("assets/images/images.png")
       center center / cover no-repeat fixed;
   padding: 100px 0 80px 0;
   text-align: center;
   color: #ffffff;
   position: relative;
   margin-top: 0;
-  border-bottom: 4px solid #711b3c; /* Maroon border at bottom for premium feel */
+  border-bottom: 4px solid #00A8B8; /* Teal border for premium feel */
 }
 
 .breadcrumb-title {
-  font-family: inherit; /* Website ki default premium font lega */
+  font-family: inherit;
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: 1px;
@@ -204,7 +204,7 @@
 }
 
 .custom-breadcrumb li a {
-  color: rgba(255, 255, 255, 0.7); /* Slightly faded white for inactive link */
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -219,7 +219,7 @@
 }
 
 .custom-breadcrumb li + li::before {
-  content: "\276F"; /* Right-pointing angle quotation mark */
+  content: "\276F";
   padding: 0 12px;
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.9rem;
@@ -231,19 +231,12 @@
 }
 
 @keyframes slideDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 @keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile Adjustments */
 @media (max-width: 768px) {
   .breadcrumb-wrapper {
     padding: 80px 0 60px 0;
@@ -256,6 +249,9 @@
   }
 }
 
+/* ==============================
+   FOOTER STYLING
+   ============================== */
 .custom-footer {
   background-color: #151515;
   color: #e0e0e0;
@@ -278,12 +274,12 @@
   bottom: 0;
   width: 45px;
   height: 3px;
-  background-color: #711b3c; /* Brand Maroon */
+  background-color: #00A8B8; /* Teal Accent */
   border-radius: 2px;
 }
 
 .footer-text {
-  color: #a9a9a9 !important; /* Light Grey for visibility */
+  color: #a9a9a9 !important;
   line-height: 1.7;
   font-size: 0.95rem;
 }
@@ -307,8 +303,8 @@
 .footer-contact-icon {
   width: 35px;
   height: 35px;
-  background-color: rgba(113, 27, 60, 0.15); /* Soft maroon bg */
-  color: #df6e97; /* Lighter maroon for dark bg contrast */
+  background-color: rgba(0, 168, 184, 0.15); /* Soft Teal bg */
+  color: #00A8B8; /* Teal */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,7 +341,6 @@
   z-index: 9999;
 }
 
-/* Common Button Styling */
 .float-btn {
   width: 55px;
   height: 55px;
@@ -360,13 +355,11 @@
   position: relative;
 }
 
-/* Hover effect */
 .float-btn:hover {
   transform: scale(1.1);
   color: #ffffff;
 }
 
-/* WhatsApp Specific Styling */
 .float-whatsapp {
   background-color: #25d366;
 }
@@ -375,33 +368,24 @@
   background-color: #20b858;
 }
 
-/* Phone Specific Styling (Using Brand Maroon) */
 .float-phone {
-  background-color: #711b3c;
+  background-color: #17385A; /* Dark Blue */
 }
 
 .float-phone:hover {
-  background-color: #5a152f;
+  background-color: #0f2740; /* Darker Blue on Hover */
 }
 
-/* Optional Pulse Animation for WhatsApp to grab attention */
 .float-whatsapp {
   animation: pulse-green 2s infinite;
 }
 
 @keyframes pulse-green {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* Mobile Responsive adjustments */
 @media (max-width: 768px) {
   .floating-contact {
     bottom: 20px;

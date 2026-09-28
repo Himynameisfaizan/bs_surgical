@@ -1,20 +1,17 @@
 <?php
-// 1. ERROR FIX: Variable ko default path ke sath initialize karna zaroori hai
 $footer_logo = "assets/images/logo/logo.png";
 
-$c_address = "Office No-102, 1st Floor, Nitika Tower II, Block C-1, Pocket-4, Azadpur, Delhi - 110033, India";
-$c_phone = "+91-8448211202";
-$c_email = "bhagirathenterprise7@gmail.com";
+$c_address = "Plot no. 2 Upper Ground Floor, Kailash Puram, Govindpuram, Ghaziabad, Uttar Pradesh - 201013";
+$c_phone = "+91-8595803224";
+$c_email = "bssurgicals@gmail.com";
 $c_fb = "#";
 $c_linkedin = "#";
 $c_wp = "#";
-$footer_about_text = "Bhagirath Enterprise is a leading exporter of premium agricultural products, specializing in farm-fresh spices and dry fruits."; // Fallback text
+$footer_about_text = "BS Surgical is a trusted provider of premium medical and surgical equipment, specializing in high-precision operating microscopes and instruments.";
 
 if (isset($conn)) {
-    // 2. ERROR FIX: Pehli query mein 'footer' location search karni hai
-    $f_logo_query = mysqli_query($conn, "SELECT logo_path FROM logos WHERE location = 'footer' AND is_active = 1 ORDER BY id DESC LIMIT 1");
+    $f_logo_query = mysqli_query($conn, "SELECT logo_path FROM logos WHERE location = 'header' AND is_active = 1 ORDER BY id DESC LIMIT 1");
 
-    // Fallback: Agar footer logo nahi mila, tab 'header' logo check karega
     if (!$f_logo_query || mysqli_num_rows($f_logo_query) == 0) {
         $f_logo_query = mysqli_query($conn, "SELECT logo_path FROM logos WHERE location = 'header' AND is_active = 1 ORDER BY id DESC LIMIT 1");
     }
@@ -55,38 +52,34 @@ if (isset($conn)) {
     <div class="container pb-5">
         <div class="row g-4">
 
-            <!-- Column 1: About & Logo -->
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                 <div class="footer-brand bg-white d-inline-block p-2 mb-4 shadow-sm" style="border-radius: 8px;">
-                    <img src="<?= htmlspecialchars($footer_logo); ?>" alt="Bhagirath Enterprise" style="width: 130px; height: auto; object-fit: contain;" onerror="this.src='assets/images/logo/logo.png'">
+                    <img src="<?= htmlspecialchars($footer_logo); ?>" alt="BS Surgical" style="width: 130px; height: auto; object-fit: contain;" onerror="this.src='assets/images/logo/logo.png'">
                 </div>
-                <h4 class="text-white fw-bold mb-3 text-uppercase" style="letter-spacing: 0.5px; font-size: 1.1rem;">BHAGIRATH ENTERPRISE</h4>
-                <!-- Dynamic Company Content -->
+                <h4 class="text-white fw-bold mb-3 text-uppercase" style="letter-spacing: 0.5px; font-size: 1.1rem;">BS SURGICAL</h4>
+                
                 <p class="footer-text mb-4">
                     <?= htmlspecialchars($footer_about_text); ?>
                 </p>
 
-                <!-- Verified Supplier Badge -->
-                <span class="badge" style="background-color: #711b3c; font-weight: 500; font-size: 13px; padding: 8px 15px; letter-spacing: 0.5px;">
-                    <i class="bi bi-shield-check me-2"></i> Verified Exporter
+                <span class="badge" style="background-color: #00A8B8; font-weight: 500; font-size: 13px; padding: 8px 15px; letter-spacing: 0.5px;">
+                    <i class="bi bi-shield-plus me-2"></i> Verified Medical Supplier
                 </span>
             </div>
 
-            <!-- Column 2: Information Links -->
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                 <h4 class="footer-heading">Information</h4>
                 <ul class="footer-links list-unstyled">
-                    <li><a href="index.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Home</a></li>
-                    <li><a href="about.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Company Profile</a></li>
-                    <li><a href="contact.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Contact Us</a></li>
-                    <li><a href="terms-condition.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Terms & Conditions</a></li>
-                    <li><a href="privacy-policy.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Privacy Policy</a></li>
-                    <li><a href="shipping-return.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Shipping & Returns</a></li>
-                    <li><a href="refund-policy.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Refund & Cancellation</a></li>
+                    <li><a href="index.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> Home</a></li>
+                    <li><a href="about.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> Company Profile</a></li>
+                    <li><a href="contact.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> Contact Us</a></li>
+                    <li><a href="terms-condition.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> Terms & Conditions</a></li>
+                    <li><a href="privacy-policy.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> Privacy Policy</a></li>
+                    <li><a href="shipping-return.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> Shipping & Returns</a></li>
+                    <li><a href="refund-policy.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> Refund & Cancellation</a></li>
                 </ul>
             </div>
 
-            <!-- Column 3: Dynamic Products -->
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                 <h4 class="footer-heading">Our Products</h4>
                 <ul class="footer-links list-unstyled">
@@ -97,21 +90,20 @@ if (isset($conn)) {
                     ?>
                             <li>
                                 <a href="product-details.php?id=<?= htmlspecialchars($prod_slug); ?>">
-                                    <i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> <?= htmlspecialchars($f_prod['pro_name']); ?>
+                                    <i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> <?= htmlspecialchars($f_prod['pro_name']); ?>
                                 </a>
                             </li>
                         <?php
                         }
                     } else {
                         ?>
-                        <li><a href="products.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Whole Spices</a></li>
-                        <li><a href="products.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Dry Fruits</a></li>
-                        <li><a href="products.php"><i class="bi bi-chevron-right small me-2" style="color: #711b3c;"></i> Premium Nuts</a></li>
+                        <li><a href="products.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> ENT Operating Microscope</a></li>
+                        <li><a href="products.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> Surgical Burs</a></li>
+                        <li><a href="products.php"><i class="bi bi-chevron-right small me-2" style="color: #00A8B8;"></i> Labomed Equipment</a></li>
                     <?php } ?>
                 </ul>
             </div>
 
-            <!-- Column 4: Contact Details -->
             <div class="col-lg-3 col-md-6">
                 <h4 class="footer-heading">Contact Details</h4>
                 <ul class="list-unstyled">
@@ -181,10 +173,10 @@ if (isset($conn)) {
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start mb-2 mb-md-0" style="color: #888; font-size: 0.9rem;">
-                    &copy; <?= date('Y'); ?> <strong class="text-white">Bhagirath Enterprise</strong>. All rights reserved.
+                    &copy; <?= date('Y'); ?> <strong class="text-white">BS SURGICAL</strong>. All rights reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end" style="color: #888; font-size: 0.9rem;">
-                    Powered by <a href="https://digitalwebtrackers.com" target="_blank" class="text-decoration-none" style="color: #df6e97; font-weight: 600; transition: 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#df6e97'">digitalwebtrackers.com</a>
+                    Powered by <a href="https://digitalwebtrackers.com" target="_blank" class="text-decoration-none" style="color: #00A8B8; font-weight: 600; transition: 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#00A8B8'">digitalwebtrackers.com</a>
                 </div>
             </div>
         </div>
@@ -200,8 +192,8 @@ if (isset($conn)) {
             <i class="bi bi-telephone-fill"></i>
         </a>
     <?php endif; ?>
-    <!-- WhatsApp Floating Button -->
 
+    <!-- WhatsApp Floating Button -->
     <?php if (!empty($c_wp) && $c_wp != '#'): ?>
         <a href="<?= htmlspecialchars($c_wp); ?>" target="_blank" class="float-btn float-whatsapp shadow-lg" title="Chat on WhatsApp">
             <i class="bi bi-whatsapp"></i>

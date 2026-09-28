@@ -1,15 +1,15 @@
 <?php
 include ('config/connect.php'); 
 
-$pageTitle = "Contact Us"; 
+$pageTitle = "Contact Us | BS Surgical"; 
 
 $contactQuery = mysqli_query($conn, "SELECT * FROM contacts ORDER BY id DESC LIMIT 1");
 $contactInfo = mysqli_fetch_assoc($contactQuery);
 
-$siteAddress = !empty($contactInfo['address']) ? $contactInfo['address'] : 'BLOCK- J SF-2 J-39 Sector 12, Pratap Vihar, Ghaziabad - 201001, U.P, India.';
-$sitePhone = !empty($contactInfo['phone']) ? $contactInfo['phone'] : '+91 97171 79432';
-$siteEmail = !empty($contactInfo['email']) ? $contactInfo['email'] : 'info@kisantokitchen.com';
-$siteWorkingHours = !empty($contactInfo['working_hours']) ? $contactInfo['working_hours'] : 'Mon - Sat, 9:00 AM to 6:00 PM IST';
+$siteAddress = !empty($contactInfo['address']) ? $contactInfo['address'] : 'Plot no. 2 Upper Ground Floor, Kailash Puram, Govindpuram, Ghaziabad, Uttar Pradesh - 201013';
+$sitePhone = !empty($contactInfo['phone']) ? $contactInfo['phone'] : '+91-8595803224';
+$siteEmail = !empty($contactInfo['email']) ? $contactInfo['email'] : 'bssurgicals@gmail.com';
+$siteWorkingHours = !empty($contactInfo['working_hours']) ? $contactInfo['working_hours'] : 'Mon - Sat, 10:00 AM to 7:00 PM IST';
 
 $msg = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_inquiry'])) {
@@ -21,13 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_inquiry'])) {
     $message = mysqli_real_escape_string($conn, $_POST['message']);
     
     if(!empty($company)) {
-        $message = "Company: " . $company . "\n\nRequirements:\n" . $message;
+        $message = "Hospital/Clinic: " . $company . "\n\nRequirements:\n" . $message;
     }
 
     $insertQuery = "INSERT INTO inquiries (name, email, phone, subject, message, status) VALUES ('$name', '$email', '$phone', '$interest', '$message', 0)";
     
     if(mysqli_query($conn, $insertQuery)) {
-        $msg = "<div class='alert alert-success mt-3'>Thank you! Your quotation request has been sent successfully. Our team will contact you soon.</div>";
+        $msg = "<div class='alert alert-success mt-3'>Thank you! Your equipment inquiry has been sent successfully. Our team will contact you soon.</div>";
     } else {
         $msg = "<div class='alert alert-danger mt-3'>Oops! Something went wrong. Please try again or call us directly.</div>";
     }
@@ -64,14 +64,14 @@ include 'includes/breadcrumb.php';
             <div class="col-lg-5 reveal">
                 <div class="contact-info-wrapper">
                     <span class="sec-subtitle">Get In Touch</span>
-                    <h2 class="sec-title" style="color: #212529;">Let's Discuss Your Export Needs.</h2>
-                    <p class="contact-desc">Have questions about our premium spices, bulk pricing, or international shipping? Our dedicated team is ready to assist you. Reach out to us today!</p>
+                    <h2 class="sec-title" style="color: #212529;">Let's Discuss Your Equipment Needs.</h2>
+                    <p class="contact-desc">Have questions about our surgical instruments, bulk pricing for hospitals, or technical specifications? Our dedicated medical team is ready to assist you. Reach out to us today!</p>
                     
                     <!-- Location Card -->
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="info-content">
-                            <h4>Head Office & Processing Unit</h4>
+                            <h4>Head Office</h4>
                             <p><?php echo htmlspecialchars($siteAddress); ?></p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ include 'includes/breadcrumb.php';
             <div class="col-lg-7 reveal">
                 <div class="contact-form-box">
                     <h3>Request a Free Quotation</h3>
-                    <p>Fill out the form below and our export manager will get back to you within 24 hours.</p>
+                    <p>Fill out the form below and our medical equipment manager will get back to you within 24 hours.</p>
                     
                     <!-- Form Submission Alert Message -->
                     <?php echo $msg; ?>
@@ -113,7 +113,7 @@ include 'includes/breadcrumb.php';
                                 <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="company" placeholder="Company Name">
+                                <input type="text" class="form-control" name="company" placeholder="Hospital / Clinic Name">
                             </div>
                         </div>
 
@@ -129,8 +129,8 @@ include 'includes/breadcrumb.php';
                         <div class="form-group">
                             <select class="form-select" name="interest" required>
                                 <?php $selectedProduct = isset($_GET['product']) ? $_GET['product'] : ''; ?>
-                                <option value="" disabled <?php echo ($selectedProduct=='')?'selected':''; ?>>Select Product of Interest</option>
-                                <option value="General Inquiry">General Business Inquiry</option>
+                                <option value="" disabled <?php echo ($selectedProduct=='')?'selected':''; ?>>Select Equipment of Interest</option>
+                                <option value="General Inquiry">General Clinic Inquiry</option>
                                 
                                 <!-- Dynamic Products from Database -->
                                 <?php 
@@ -150,7 +150,7 @@ include 'includes/breadcrumb.php';
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" name="message" placeholder="Tell us about your requirement (Quantity, Destination Port, Packaging preference)..." required></textarea>
+                            <textarea class="form-control" name="message" placeholder="Tell us about your requirement (Quantity, Installation location, Equipment specific queries)..." required></textarea>
                         </div>
 
                         <button type="submit" name="submit_inquiry" class="btn-submit">Send Message <i class="fa-regular fa-paper-plane ms-2"></i></button>
@@ -172,18 +172,15 @@ include 'includes/breadcrumb.php';
                 if (!empty($contactInfo['map'])) {
                     $mapData = trim($contactInfo['map']);
                     
-                    // Check if it's a full iframe tag or just a URL
                     if (strpos($mapData, '<iframe') !== false) {
-                        // Automatically adjust width/height of iframe to fit container
                         $mapIframe = str_replace(['width="600"', 'width="100%"'], 'width="100%"', $mapData);
                         $mapIframe = preg_replace('/height="\d+"/', 'height="100%"', $mapIframe);
                         echo $mapIframe;
                     } else {
-                        // If it's just a raw URL (like in your database dump)
                         echo '<iframe src="' . htmlspecialchars($mapData) . '" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
                     }
                 } else {
-                    // Fallback map
+                    // Updated Fallback map location based on Ghaziabad address
                     echo '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112028.98822506727!2d77.35246733221995!3d28.66317765955627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1bb41c50fdf%3A0xe6f06fd26a7798ba!2sGhaziabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
                 }
             ?>
@@ -210,12 +207,12 @@ include 'includes/breadcrumb.php';
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                How quickly do you respond to quotation requests?
+                                How quickly do you respond to equipment quotation requests?
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#contactFaqAccordion">
                             <div class="accordion-body">
-                                Our international sales team operates round the clock. You can expect a detailed response with pricing, availability, and shipping estimates within 12 to 24 hours of submitting your inquiry.
+                                Our sales team operates from Mon-Sat. You can expect a detailed response with pricing, availability, and technical specifications within 24 hours of submitting your inquiry.
                             </div>
                         </div>
                     </div>
@@ -223,12 +220,12 @@ include 'includes/breadcrumb.php';
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                Can I request a free sample before placing a bulk order?
+                                Do you provide installation and technical support?
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
                             <div class="accordion-body">
-                                Yes, we encourage our B2B buyers to check our quality. We provide free product samples; however, the international courier/freight charges must be borne by the buyer.
+                                Yes, we offer comprehensive installation guidance and after-sales support for our equipment like operating microscopes to ensure smooth operations in your healthcare facility.
                             </div>
                         </div>
                     </div>
@@ -236,12 +233,12 @@ include 'includes/breadcrumb.php';
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                Do you arrange logistics and international shipping?
+                                Do you handle delivery to clinics and hospitals nationwide?
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
                             <div class="accordion-body">
-                                Absolutely. We offer FOB (Free On Board) as well as CIF (Cost, Insurance, and Freight) terms. Our logistics team handles all customs clearance and ensures secure delivery to your destination port.
+                                Absolutely. We have a robust logistics network to ensure safe, secure, and timely delivery of delicate surgical equipment to your location anywhere across the country.
                             </div>
                         </div>
                     </div>
