@@ -1,4 +1,4 @@
-# robots.txt for Bhagirath Enterprise
+# robots.txt for BS Surgical
 
 User-agent: *
 Disallow: /admin/
@@ -10,4 +10,4 @@ Disallow: /inquiry-process.php
 Allow: /
 
 # Sitemap link
-Sitemap: https://royalblue-gazelle-538620.hostingersite.com/sitemap.xml
+Sitemap: https://bssurgicals.net/sitemap.xml
